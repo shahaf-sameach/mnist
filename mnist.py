@@ -13,11 +13,12 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Convolution2D, MaxPooling2D
 from keras.utils import np_utils
+import time
 # from keras.utils.visualize_util import plot
 
 batch_size = 128
 nb_classes = 10
-nb_epoch = 50
+nb_epoch = 12
 
 # input image dimensions
 img_rows, img_cols = 28, 28
@@ -28,22 +29,28 @@ nb_pool = 2
 # convolution kernel size
 nb_conv = 3
 
-# the data, shuffled and split between train and test sets
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
+data = np.loadtxt("train.txt", delimiter=",")
 
-X_train = X_train.reshape(X_train.shape[0], 1, img_rows, img_cols)
-X_test = X_test.reshape(X_test.shape[0], 1, img_rows, img_cols)
-X_train = X_train.astype('float32')
-X_test = X_test.astype('float32')
-X_train /= 255
-X_test /= 255
-print('X_train shape:', X_train.shape)
-print(X_train.shape[0], 'train samples')
-print(X_test.shape[0], 'test samples')
+precent = int(data.shape[0] * 0.1)
+test_data, train_data = data[:precent,:], data[precent:,:]
+
+x_train = train_data[:,1:]
+x_test = test_data[:,1:]
+
+std_dev = np.std(x_train, axis=0)
+
+y_train = train_data[:,0]
+y_test = test_data[:,0]
+
+x_train = x_train.reshape(x_train.shape[0], 1, img_rows, img_cols)
+x_test = x_test.reshape(x_test.shape[0], 1, img_rows, img_cols)
+
+x_train = x_train.astype('float32')
+x_test = x_test.astype('float32')
 
 # convert class vectors to binary class matrices
-Y_train = np_utils.to_categorical(y_train, nb_classes)
-Y_test = np_utils.to_categorical(y_test, nb_classes)
+y_train = np_utils.to_categorical(y_train, nb_classes)
+y_test = np_utils.to_categorical(y_test, nb_classes)
 
 model = Sequential()
 
@@ -68,17 +75,19 @@ model.compile(loss='categorical_crossentropy',
               metrics=['accuracy'])
 
 
+t0 = time.time()
 
+model.fit(x_train, y_train, batch_size=batch_size, nb_epoch=nb_epoch,
+          verbose=1, validation_data=(x_test, y_test))
 
-# plot(model, to_file='model.png')
+t1 = time.time()
 
-model.fit(X_train, Y_train, batch_size=batch_size, nb_epoch=nb_epoch,
-          verbose=1, validation_data=(X_test, Y_test))
-
-score = model.evaluate(X_test, Y_test, verbose=0)
+score = model.evaluate(x_test, y_test, verbose=0)
 
 print('Test score:', score[0])
 print('Test accuracy:', score[1])
 
-
 model.save_weights("weights_%s_%s.hdf5" %(score[0], score[1]))
+
+print("done took %s sec" % int(t1 - t0))
+
