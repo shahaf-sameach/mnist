@@ -14,7 +14,31 @@ from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Convolution2D, MaxPooling2D
 from keras.utils import np_utils
 import time
+import random
 # from keras.utils.visualize_util import plot
+
+
+def rand_jitter(temp):
+	basicTemp = temp
+	moreTemp = temp
+	#if np.random.random() > .7:
+	temp = basicTemp
+	moreTemp[np.random.randint(0,28,1), :] = 0
+	temp += moreTemp
+	if np.random.random() > .7:
+		temp = basicTemp
+		moreTemp[:, np.random.randint(0,28,1)] = 0
+		temp += moreTemp
+	if np.random.random() > .7:
+		temp = basicTemp
+		moreTemp = shift(moreTemp, shift=(np.random.randint(-3,3,2)))
+		temp += moreTemp
+	if np.random.random() > .7:
+		temp = basicTemp
+		moreTemp = rotate(moreTemp, angle = np.random.randint(-15,15,1), reshape=False)
+		temp += moreTemp
+	return temp
+
 
 batch_size = 128
 nb_classes = 10
@@ -42,15 +66,23 @@ std_dev = np.std(x_train, axis=0)
 y_train = train_data[:,0]
 y_test = test_data[:,0]
 
-X_train = x_train.reshape(x_train.shape[0], 1, img_rows, img_cols)
-X_test = x_test.reshape(x_test.shape[0], 1, img_rows, img_cols)
+x_train = x_train.reshape(x_train.shape[0], 1, img_rows, img_cols)
+x_test = x_test.reshape(x_test.shape[0], 1, img_rows, img_cols)
 
-X_train = X_train.astype('float32')
-X_test = X_test.astype('float32')
+x_train = x_train.astype('float32')
+x_test = x_test.astype('float32')
 
 # convert class vectors to binary class matrices
-Y_train = np_utils.to_categorical(y_train, nb_classes)
-Y_test = np_utils.to_categorical(y_test, nb_classes)
+y_train = np_utils.to_categorical(y_train, nb_classes)
+y_test = np_utils.to_categorical(y_test, nb_classes)
+
+
+startX_train = x_train
+
+#add gaussian noise
+X_trainMore = startX_train
+rand_jitter(X_trainMore)
+x_train += X_trainMore
 
 model = Sequential()
 
@@ -77,24 +109,16 @@ model.compile(loss='categorical_crossentropy',
 
 t0 = time.time()
 
-# Training
-for k in range(0, nb_epoch):
-    X_train_temp = np.copy(x_train) # Copy to not effect the originals
-    
-    # Add noise on later epochs
-    if k > 0:
-        for j in range(0, X_train_temp.shape[0]):
-            X_train_temp[j,0, :, :] = rand_jitter(X_train_temp[j,0,:,:])
-
-    model.fit(X_train_temp, Y_train, nb_epoch=1, batch_size=batch_size, 
-              validation_data=(X_test, Y_test), 
-              callbacks=[checkpointer])
+model.fit(x_train, y_train, batch_size=batch_size, nb_epoch=nb_epoch,
+          verbose=1, validation_data=(x_test, y_test))
 
 t1 = time.time()
 
-score = model.evaluate(X_test, Y_test, verbose=0)
+score = model.evaluate(x_test, y_test, verbose=0)
 
 print('Test score:', score[0])
 print('Test accuracy:', score[1])
-print("done took %s sec" % int(t1 - t0))
 
+model.save_weights("weights_%s_%s.hdf5" %(score[0], score[1]))
+
+print("done took %s sec" % int(t1 - t0))
