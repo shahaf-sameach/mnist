@@ -7,7 +7,6 @@ from numpy.random import random_integers
 
 def rand_jitter(temp, prob=0.5):
     np.random.seed(1337)  # for reproducibility
-
     if np.random.random() > prob:
         temp[np.random.randint(0,28,1), :] = 0
     if np.random.random() > prob:
@@ -15,70 +14,13 @@ def rand_jitter(temp, prob=0.5):
     if np.random.random() > prob:
         temp = shift(temp, shift=(np.random.randint(-3,4,2)))
     if np.random.random() > prob:
-        temp = rotate(temp, angle = np.random.randint(-15,16,1), reshape=False)
-    if np.random.random() > prob:
-        temp = elastic_transform(temp)
+        temp = rotate(temp, angle = np.random.randint(-20,21,1), reshape=False)
+    # if np.random.random() > prob:
+    #     temp = elastic_transform(temp)
     return temp
-
-def add_h_noise(data):
-  x_data = data[:,1:]
-  y_data = data[:,0]
-  x_data = x_data.reshape(x_data.shape[0], 1, 28, 28)
-  x_data = x_data.astype('float32')
-  for i in range(0,x_data.shape[0]):
-    x_data[np.random.randint(0,28,1), :] = 0
-    x_data[j,0, :, :] = h_noise(x_data[j,0,:,:])
-
-
-def h_noise(temp):
-  temp[np.random.randint(0,28,1), :] = 0
-
-def v_noise(temp):
-  temp[np.random.randint(0,28,1), :] = 0
-
-def shift_noise(temp):
-  data = np.copy(temp)
-  for i in range(-3,4):
-    for j in range(-3,4):
-      temp = shift(temp, shift=(np.random.randint(-3,4,2)))
-      data = np.append(data, temp)
 
 
 def elastic_transform(image, kernel_dim=13, sigma=6, alpha=36, negated=False):
-    """
-    This method performs elastic transformations on an image by convolving 
-    with a gaussian kernel.
-    NOTE: Image dimensions should be a sqaure image
-    
-    :param image: the input image
-    :type image: a np nd array
-    :param kernel_dim: dimension(1-D) of the gaussian kernel
-    :type kernel_dim: int
-    :param sigma: standard deviation of the kernel
-    :type sigma: float
-    :param alpha: a multiplicative factor for image after convolution
-    :type alpha: float
-    :param negated: a flag indicating whether the image is negated or not
-    :type negated: boolean
-    :returns: a nd array transformed image
-    """
-    
-    # convert the image to single channel if it is multi channel one
-    # if image.ndim == 3:
-    #     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    # check if the image is a negated one
-    # if not negated:
-    #     image = 255-image
-
-    # check if the image is a square one
-    # if image.shape[0] != image.shape[1]:
-    #     raise ValueError("Image should be of sqaure form")
-
-    # check if kernel dimesnion is odd
-    # if kernel_dim % 2 == 0:
-    #     raise ValueError("Kernel dimension should be odd")
-
     # create an empty image
     result = np.zeros(image.shape)
 
@@ -114,27 +56,10 @@ def elastic_transform(image, kernel_dim=13, sigma=6, alpha=36, negated=False):
                     image[high_ii, low_jj]/4 + image[high_ii, high_jj]/4
 
             result[row, col] = res
-    
-    # if the input image was not negated, make the output image also a non 
-    # negated one
-    # if not negated:
-    #     result = 255-result
 
     return result
 
 def create_2d_gaussian(dim, sigma):
-    """
-    This function creates a 2d gaussian kernel with the standard deviation
-    denoted by sigma
-    
-    :param dim: integer denoting a side (1-d) of gaussian kernel
-    :type dim: int
-    :param sigma: the standard deviation of the gaussian kernel
-    :type sigma: float
-    
-    :returns: a np 2d array
-    """
-
     # check if the dimension is odd
     if dim % 2 == 0:
         raise ValueError("Kernel dimension should be odd")
@@ -168,14 +93,10 @@ if __name__ == '__main__':
     import matplotlib.pyplot as plt
     from keras.datasets import mnist
 
-
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
-    X_train = X_train.reshape(X_train.shape[0], 1, 28, 28)
     X_test = X_test.reshape(X_test.shape[0], 1, 28, 28)
-    X_train = X_train.astype('float32')
     X_test = X_test.astype('float32')
-    X_train /= 255
     X_test /= 255
 
     plt.figure()
