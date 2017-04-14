@@ -1,0 +1,264 @@
+Using Theano backend.
+Couldn't import dot_parser, loading of dot files will not be possible.
+/Library/Python/2.7/site-packages/keras/utils/np_utils.py:16: VisibleDeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  Y[i, y[i]] = 1.
+32x16 model
+epoch 1/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.4539 - acc: 0.8548Epoch 00000: val_loss improved from inf to 0.13580, saving model to weights5.hdf5
+36000/36000 [==============================] - 66s - loss: 0.4536 - acc: 0.8549 - val_loss: 0.1358 - val_acc: 0.9593
+epoch 2/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.1288 - acc: 0.9595Epoch 00000: val_loss improved from 0.13580 to 0.07393, saving model to weights5.hdf5
+36000/36000 [==============================] - 70s - loss: 0.1289 - acc: 0.9596 - val_loss: 0.0739 - val_acc: 0.9778
+epoch 3/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0902 - acc: 0.9719Epoch 00000: val_loss improved from 0.07393 to 0.05864, saving model to weights5.hdf5
+36000/36000 [==============================] - 67s - loss: 0.0901 - acc: 0.9720 - val_loss: 0.0586 - val_acc: 0.9822
+epoch 4/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0740 - acc: 0.9766Epoch 00000: val_loss improved from 0.05864 to 0.05078, saving model to weights5.hdf5
+36000/36000 [==============================] - 70s - loss: 0.0740 - acc: 0.9766 - val_loss: 0.0508 - val_acc: 0.9840
+epoch 5/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0618 - acc: 0.9807Epoch 00000: val_loss improved from 0.05078 to 0.04495, saving model to weights5.hdf5
+36000/36000 [==============================] - 74s - loss: 0.0618 - acc: 0.9807 - val_loss: 0.0450 - val_acc: 0.9840
+epoch 6/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0533 - acc: 0.9823Epoch 00000: val_loss improved from 0.04495 to 0.04443, saving model to weights5.hdf5
+36000/36000 [==============================] - 72s - loss: 0.0534 - acc: 0.9823 - val_loss: 0.0444 - val_acc: 0.9848
+epoch 7/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0493 - acc: 0.9844Epoch 00000: val_loss improved from 0.04443 to 0.03990, saving model to weights5.hdf5
+36000/36000 [==============================] - 62s - loss: 0.0492 - acc: 0.9844 - val_loss: 0.0399 - val_acc: 0.9872
+epoch 8/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0449 - acc: 0.9860Epoch 00000: val_loss improved from 0.03990 to 0.03569, saving model to weights5.hdf5
+36000/36000 [==============================] - 61s - loss: 0.0449 - acc: 0.9860 - val_loss: 0.0357 - val_acc: 0.9882
+epoch 9/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0383 - acc: 0.9881Epoch 00000: val_loss improved from 0.03569 to 0.03525, saving model to weights5.hdf5
+36000/36000 [==============================] - 62s - loss: 0.0383 - acc: 0.9881 - val_loss: 0.0353 - val_acc: 0.9872
+epoch 10/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0373 - acc: 0.9883Epoch 00000: val_loss improved from 0.03525 to 0.03311, saving model to weights5.hdf5
+36000/36000 [==============================] - 62s - loss: 0.0373 - acc: 0.9883 - val_loss: 0.0331 - val_acc: 0.9888
+epoch 11/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0326 - acc: 0.9893Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 63s - loss: 0.0325 - acc: 0.9893 - val_loss: 0.0368 - val_acc: 0.9880
+epoch 12/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0315 - acc: 0.9899Epoch 00000: val_loss improved from 0.03311 to 0.02762, saving model to weights5.hdf5
+36000/36000 [==============================] - 62s - loss: 0.0317 - acc: 0.9899 - val_loss: 0.0276 - val_acc: 0.9898
+epoch 13/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0299 - acc: 0.9904Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 61s - loss: 0.0299 - acc: 0.9904 - val_loss: 0.0298 - val_acc: 0.9900
+epoch 14/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0288 - acc: 0.9907Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 63s - loss: 0.0288 - acc: 0.9907 - val_loss: 0.0358 - val_acc: 0.9882
+epoch 15/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0261 - acc: 0.9920Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 61s - loss: 0.0261 - acc: 0.9920 - val_loss: 0.0314 - val_acc: 0.9900
+epoch 16/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0250 - acc: 0.9917Epoch 00000: val_loss improved from 0.02762 to 0.02554, saving model to weights5.hdf5
+36000/36000 [==============================] - 61s - loss: 0.0250 - acc: 0.9917 - val_loss: 0.0255 - val_acc: 0.9910
+epoch 17/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0235 - acc: 0.9925Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 80s - loss: 0.0235 - acc: 0.9925 - val_loss: 0.0301 - val_acc: 0.9908
+epoch 18/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0229 - acc: 0.9928Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 71s - loss: 0.0228 - acc: 0.9928 - val_loss: 0.0293 - val_acc: 0.9902
+epoch 19/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0218 - acc: 0.9932Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 66s - loss: 0.0218 - acc: 0.9932 - val_loss: 0.0296 - val_acc: 0.9902
+epoch 20/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0203 - acc: 0.9932Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 74s - loss: 0.0203 - acc: 0.9932 - val_loss: 0.0294 - val_acc: 0.9922
+epoch 21/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0186 - acc: 0.9937Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 67s - loss: 0.0186 - acc: 0.9937 - val_loss: 0.0287 - val_acc: 0.9915
+epoch 22/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0186 - acc: 0.9936Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 67s - loss: 0.0186 - acc: 0.9936 - val_loss: 0.0279 - val_acc: 0.9915
+epoch 23/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0185 - acc: 0.9942Epoch 00000: val_loss improved from 0.02554 to 0.02440, saving model to weights5.hdf5
+36000/36000 [==============================] - 64s - loss: 0.0185 - acc: 0.9941 - val_loss: 0.0244 - val_acc: 0.9922
+epoch 24/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0155 - acc: 0.9948Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 63s - loss: 0.0155 - acc: 0.9948 - val_loss: 0.0262 - val_acc: 0.9922
+epoch 25/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0152 - acc: 0.9949Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 67s - loss: 0.0152 - acc: 0.9949 - val_loss: 0.0278 - val_acc: 0.9918
+epoch 26/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0154 - acc: 0.9949Epoch 00000: val_loss improved from 0.02440 to 0.02262, saving model to weights5.hdf5
+36000/36000 [==============================] - 60s - loss: 0.0155 - acc: 0.9949 - val_loss: 0.0226 - val_acc: 0.9928
+epoch 27/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0162 - acc: 0.9948Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 59s - loss: 0.0162 - acc: 0.9948 - val_loss: 0.0304 - val_acc: 0.9920
+epoch 28/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0153 - acc: 0.9949Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 59s - loss: 0.0153 - acc: 0.9949 - val_loss: 0.0267 - val_acc: 0.9920
+epoch 29/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0147 - acc: 0.9951Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 59s - loss: 0.0147 - acc: 0.9951 - val_loss: 0.0243 - val_acc: 0.9928
+epoch 30/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0143 - acc: 0.9951Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 58s - loss: 0.0143 - acc: 0.9951 - val_loss: 0.0272 - val_acc: 0.9922
+epoch 31/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0109 - acc: 0.9960Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 58s - loss: 0.0109 - acc: 0.9960 - val_loss: 0.0272 - val_acc: 0.9930
+epoch 32/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0124 - acc: 0.9958Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 59s - loss: 0.0124 - acc: 0.9958 - val_loss: 0.0285 - val_acc: 0.9920
+epoch 33/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0120 - acc: 0.9957Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 68s - loss: 0.0120 - acc: 0.9958 - val_loss: 0.0273 - val_acc: 0.9925
+epoch 34/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0125 - acc: 0.9957Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 61s - loss: 0.0125 - acc: 0.9957 - val_loss: 0.0272 - val_acc: 0.9922
+epoch 35/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0114 - acc: 0.9963Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 62s - loss: 0.0114 - acc: 0.9963 - val_loss: 0.0249 - val_acc: 0.9922
+epoch 36/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0127 - acc: 0.9960Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 61s - loss: 0.0127 - acc: 0.9960 - val_loss: 0.0277 - val_acc: 0.9928
+epoch 37/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0099 - acc: 0.9966Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 64s - loss: 0.0099 - acc: 0.9966 - val_loss: 0.0294 - val_acc: 0.9928
+epoch 38/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0098 - acc: 0.9968Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 63s - loss: 0.0098 - acc: 0.9968 - val_loss: 0.0230 - val_acc: 0.9925
+epoch 39/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0107 - acc: 0.9964Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 62s - loss: 0.0107 - acc: 0.9964 - val_loss: 0.0273 - val_acc: 0.9930
+epoch 40/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0100 - acc: 0.9962Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 75s - loss: 0.0099 - acc: 0.9962 - val_loss: 0.0249 - val_acc: 0.9925
+epoch 41/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0094 - acc: 0.9964Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 63s - loss: 0.0094 - acc: 0.9964 - val_loss: 0.0274 - val_acc: 0.9930
+epoch 42/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0097 - acc: 0.9966Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 62s - loss: 0.0097 - acc: 0.9966 - val_loss: 0.0319 - val_acc: 0.9915
+epoch 43/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0088 - acc: 0.9969Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 59s - loss: 0.0088 - acc: 0.9969 - val_loss: 0.0317 - val_acc: 0.9930
+epoch 44/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0098 - acc: 0.9963Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 61s - loss: 0.0098 - acc: 0.9963 - val_loss: 0.0285 - val_acc: 0.9928
+epoch 45/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0095 - acc: 0.9971Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 61s - loss: 0.0095 - acc: 0.9971 - val_loss: 0.0294 - val_acc: 0.9925
+epoch 46/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0095 - acc: 0.9966Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 61s - loss: 0.0095 - acc: 0.9966 - val_loss: 0.0266 - val_acc: 0.9932
+epoch 47/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0085 - acc: 0.9972Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 61s - loss: 0.0085 - acc: 0.9972 - val_loss: 0.0246 - val_acc: 0.9938
+epoch 48/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0092 - acc: 0.9967Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 65s - loss: 0.0092 - acc: 0.9968 - val_loss: 0.0265 - val_acc: 0.9928
+epoch 49/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0074 - acc: 0.9971Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 62s - loss: 0.0074 - acc: 0.9971 - val_loss: 0.0262 - val_acc: 0.9930
+epoch 50/50:
+Train on 36000 samples, validate on 4000 samples
+Epoch 1/1
+35968/36000 [============================>.] - ETA: 0s - loss: 0.0083 - acc: 0.9973Epoch 00000: val_loss did not improve
+36000/36000 [==============================] - 59s - loss: 0.0083 - acc: 0.9973 - val_loss: 0.0253 - val_acc: 0.9935
+Test score: 0.0226196287632
+Test accuracy: 0.99275
+-----------
+Val1 score: 0.0350432609459
+Val1 accuracy: 0.9898
+-----------
+Val2 score: 0.0316773403541
+Val2 accuracy: 0.9927
+done took 3253 sec
