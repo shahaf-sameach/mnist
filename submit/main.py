@@ -6,7 +6,7 @@ from sklearn.cross_validation import train_test_split
 from jitter import rand_jitter
 from time import time
 from network import Network
-from callbacks import ScoreHistory
+# from callbacks import ScoreHistory
 
 def write_to_file(predictions, filename='predictions.txt'):
   with open(filename, 'w') as predictions_file:
